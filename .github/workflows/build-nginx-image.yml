@@ -9,6 +9,7 @@ name: Nginx image build
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: default
     steps:
     - name: Checks out repository
       uses: actions/checkout@v4

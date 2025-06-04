@@ -50,16 +50,14 @@ jobs:
       with:
         repository: pontusc/homelab
         token: ${{secrets.GITHUB_TOKEN}}
-        path: homelab
 
     - name: Update k8s manifest
       run: |
-        cd homelab/apps/aboutme
+        cd apps/aboutme
         sed -i "s|pontusc/aboutme:.*|pontusc/aboutme:$DOCKER_TAG|" aboutme.yml
 
     - name: Commit
       run: |
-        cd homelab
         git config --local user.name 'github-actions[bot]'
         git config --local user.email 'github-actions[bot]@users.noreply.github.com'
         git commit -a -m "Update aboutme manifest to latest image tag"

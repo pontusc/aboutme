@@ -10,12 +10,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
+    - name: Checks out repository
+      uses: actions/checkout@v4
+
+    - name: Docker Login
+      uses: docker/login-action@v3.4.0
+      with:
+        username: ${{ vars.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PAT }}
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Setup build environment
       run: |
-        echo "$DOCKER_PAT" | docker login -u $DOCKER_USER --password-stdin
         cp build-resources/nginx-default.conf .
-        docker build . --file Dockerfile --tag aboutme:$(date +%s)
-      env:
-        DOCKER_PAT: ${{ secrets.DOCKER_PAT }}
-        DOCKER_USER: ${{ vars.DOCKER_USER }}
+
+    - name: Build and push
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: pontusc/aboutme:$(date +%s)

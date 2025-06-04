@@ -13,6 +13,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
+        echo "$DOCKER_PAT" | docker login -u $DOCKER_USER --password-stdin
         cp build-resources/nginx-default.conf .
-        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-
+        docker build . --file Dockerfile --tag aboutme:$(date +%s)
+      env:
+        DOCKER_PAT: ${{ secrets.DOCKER_PAT }}
+        DOCKER_USER: ${{ vars.DOCKER_USER }}

@@ -9,6 +9,8 @@ name: Build
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      DOCKER_TAG: ${{ steps.setup.outputs.dockertag}}
     environment: default
     steps:
     - name: Checks out repository
@@ -36,5 +38,13 @@ jobs:
         cache-from: type=registry,ref=${{vars.DOCKER_USER}}/aboutme:latest
         cache-to: type=inline
         tags: ${{steps.setup.outputs.dockertag}}
-      env:
-        DOCKER_USER: ${{vars.DOCKER_USER}}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_TAG: ${{needs.build.outputs.DOCKER_TAG}}
+    steps:
+    - name: testing
+      run: |
+        echo ${{vars.DOCKER_TAG}}

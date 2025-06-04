@@ -24,7 +24,7 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Setup build environment
-      tag: setup
+      id: setup
       run: |
         cp build-resources/nginx-default.conf .
         echo "dockertag=pontusc/aboutme:$(date +%s)" >> $GITHUB_OUTPUT

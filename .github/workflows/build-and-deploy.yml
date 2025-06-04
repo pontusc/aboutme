@@ -42,9 +42,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment: default
     env:
       DOCKER_TAG: ${{needs.build.outputs.DOCKER_TAG}}
     steps:
     - name: testing
       run: |
-        echo ${{vars.DOCKER_TAG}}
+        echo "${vars.DOCKER_TAG}"

@@ -1,4 +1,4 @@
-name: Nginx image build
+name: Build
 
 "on":
   push:

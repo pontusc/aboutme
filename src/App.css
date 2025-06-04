@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.description {
+  margin-top: 18px;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.tabButton {
+  background: transparent;
+  
+  &:hover, :focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  &:hover, :active {
+    font-weight: bold;
+  }
+}
+
+.tabButton.activeTab {
+  font-weight: bold;
+}

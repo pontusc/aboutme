@@ -33,7 +33,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        cache-from: type=registry,ref=/aboutme${{vars.DOCKER_USER}}:latest
+        cache-from: type=registry,ref=${{vars.DOCKER_USER}}/aboutme:latest
         tags: ${{steps.setup.outputs.dockertag}}
       env:
         DOCKER_USER: ${{vars.DOCKER_USER}}

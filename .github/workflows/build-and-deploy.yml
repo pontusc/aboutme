@@ -1,4 +1,4 @@
-name: Build
+name: Build & Deploy
 
 "on":
   push:
@@ -28,7 +28,6 @@ jobs:
     - name: Setup build environment
       id: setup
       run: |
-        cp build-resources/nginx-default.conf .
         echo "dockertag=pontusc/aboutme:$(date +%s)" >> $GITHUB_OUTPUT
 
     - name: Build and push
@@ -46,6 +45,23 @@ jobs:
     env:
       DOCKER_TAG: ${{needs.build.outputs.DOCKER_TAG}}
     steps:
-    - name: testing
+    - name: Checkout homelab repo
+      uses: actions/checkout@v4
+      with:
+        repository: pontusc/homelab
+        token: ${{secrets.GITHUB_TOKEN}}
+
+    - name: Update k8s manifest
       run: |
-        echo "${DOCKER_TAG}"
+        cd homelab/apps/aboutme
+        sed -i "s|pontusc/aboutme:.*|pontusc/aboutme:$DOCKER_TAG|" aboutme.yml
+        cat aboutme.yml
+
+    - name: Commit and push change
+      run: |
+        cd homelab
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "Update aboutme manifest to latest image tag" || exit 0
+        git push

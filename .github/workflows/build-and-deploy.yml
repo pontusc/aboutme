@@ -50,6 +50,7 @@ jobs:
       with:
         repository: pontusc/homelab
         token: ${{secrets.GITHUB_TOKEN}}
+        path: homelab
 
     - name: Update k8s manifest
       run: |

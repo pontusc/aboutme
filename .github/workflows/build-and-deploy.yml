@@ -54,7 +54,7 @@ jobs:
     - name: Update k8s manifest
       run: |
         cd apps/aboutme
-        sed -i "s|pontusc/aboutme:.*|pontusc/aboutme:$DOCKER_TAG|" aboutme.yml
+        sed -i "s|pontusc/aboutme:.*$|pontusc/aboutme:$DOCKER_TAG|" aboutme.yml
 
     - name: Commit
       run: |

@@ -54,15 +54,18 @@ jobs:
 
     - name: Update k8s manifest
       run: |
-        ls
         cd homelab/apps/aboutme
         sed -i "s|pontusc/aboutme:.*|pontusc/aboutme:$DOCKER_TAG|" aboutme.yml
-        cat aboutme.yml
 
-    - name: Commit and push change
+    - name: Commit
       run: |
         cd homelab
         git config --local user.name 'github-actions[bot]'
         git config --local user.email 'github-actions[bot]@users.noreply.github.com'
-        git commit -a -m "Update aboutme manifest to latest image tag" || exit 0
-        git push
+        git commit -a -m "Update aboutme manifest to latest image tag"
+
+    - name: Push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{secrets.PAT_TOKEN}}
+        repository: pontusc/homelab

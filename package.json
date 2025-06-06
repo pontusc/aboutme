@@ -3,11 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://pontusc.github.io",
+  "homepage": "http://aboutme.nejlikka.com",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build && mv dist build",
-    "deploy": "gh-pages -d build",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

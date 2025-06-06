@@ -2,6 +2,7 @@ import { Tabs } from "radix-ui";
 import { useState } from "react";
 import "./App.css";
 import { Skills } from "./components/skills";
+import { Contact } from "./components/contact";
 
 function App() {
   const [tab, setTab] = useState("tab1");
@@ -53,6 +54,7 @@ function App() {
           nosstruc
         </Tabs.Content>
       </Tabs.Root>
+      <Contact />
     </div>
   );
 }

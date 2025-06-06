@@ -28,3 +28,7 @@
 .tabButton.activeTab {
   font-weight: bold;
 }
+
+.TabsContent {
+  padding: 20px 40px;
+}

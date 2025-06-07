@@ -51,7 +51,7 @@ const ProfileImg = styled.img`
 export const Header = () => {
   const isMobile = useIsMobile();
   const description =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centurie, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+    "I'm a DevOps Engineer who believes the best technology emerges from great teamwork and continuous learning. With a diverse background spanning VR development to Kubernetes orchestration, I bring both technical expertise and a collaborative mindset to every challenge. Currently deepening my knowledge through formal DevOps studies while experimenting with cutting-edge tools in my personal homelab. I'm passionate about creating reliable, scalable solutions and thrive in environments where I can both contribute meaningfully and grow alongside innovative teams.";
 
   if (isMobile) {
     return (

@@ -22,7 +22,6 @@ const skills: Skill[] = [
   { label: "GitLab Pipelines", type: "tool" },
   { label: "Kubernetes", type: "tool" },
   { label: "ArgoCD", type: "tool" },
-  { label: "K3S", type: "tool" },
 ];
 
 const SkillsContainer = styled.div`

@@ -12,14 +12,14 @@ const projects: Project[] = [
     title: "Homelab",
     description:
       "A homelab kubernetes deployment running on 3 nodes (virtualized) for me to test new tools and learn about server management, networking and kubernetes GitOps.",
-    tools: ["item1", "item2"],
+    tools: ["Kubernetes", "Helm", "Docker", "GitHub Actions", "ArgoCD", "Incus"],
     url: "https://github.com/pontusc/homelab",
   },
   {
     title: "Dotnet App",
     description:
       "A course project to build and deploy a dotnet app using a React frontend and a Dotnet backend, deployed on a portainer instance.",
-    tools: ["item1", "item2"],
+    tools: ["GitLab CI", "Docker", "Portainer"],
     url: "https://github.com/pontusc/devops-doe24/tree/main/pipeline-utilities",
   },
 ];

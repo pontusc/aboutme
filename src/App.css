@@ -44,4 +44,8 @@
 
 .TabsContent {
   padding-top: 30px;
+
+  @media (max-width: 800px) {
+    padding-top: 10px;
+  }
 }

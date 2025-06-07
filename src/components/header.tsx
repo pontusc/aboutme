@@ -4,6 +4,7 @@ import useIsMobile from "../utils";
 
 const Container = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 4rem;
   margin-bottom: 50px;
@@ -20,6 +21,10 @@ const TopContainer = styled.div`
   gap: 1rem;
 `;
 
+const TextContent = styled.div`
+  width: 50%;
+`;
+
 const ImageContainer = styled.div`
   width: 25%;
   display: flex;
@@ -30,6 +35,8 @@ const ImageContainer = styled.div`
   background-color: #2f2f2f;
   padding: 6px;
   transform: rotate(5deg);
+  align-self: center;
+  justify-self: center;
 `;
 
 const ProfileImg = styled.img`
@@ -65,11 +72,11 @@ export const Header = () => {
 
   return (
     <Container>
-      <div>
+      <TextContent>
         <h1>Pontus Curtsson</h1>
         <h3>DevOps Engineer</h3>
         <p className="description">{description}</p>
-      </div>
+      </TextContent>
       <ImageContainer>
         <ProfileImg src={profileImg} />
       </ImageContainer>

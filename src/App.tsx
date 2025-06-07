@@ -12,7 +12,7 @@ function App() {
     <div>
       <Header />
       <Tabs.Root value={tab} onValueChange={(val) => setTab(val)}>
-        <Tabs.List>
+        <Tabs.List className="tabList">
           <Tabs.Trigger
             className={`tabButton ${tab === "tab1" ? "activeTab" : ""}`}
             value="tab1"

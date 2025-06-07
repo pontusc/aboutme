@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 8rem 4rem;
 
   @media (max-wdith: 800px) {
       padding: 1rem 2rem;
@@ -12,20 +12,27 @@
   margin-top: 18px;
 }
 
-.header {
-  margin-bottom: 50px;
+.tabList {
+  display: flex;
+  gap: 1rem;
 }
 
 .tabButton {
   background: transparent;
-  
+  transition: transform 0.2s ease;
+  font-size: 1.25rem;
+  padding-left: 0;
+
   &:hover, :focus-visible {
     border: none;
     outline: none;
+    transform: scale(1.01)
   }
 
   &:hover, :active {
     font-weight: bold;
+        transform: scale(1.01)
+
   }
 }
 

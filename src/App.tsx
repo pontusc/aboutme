@@ -5,6 +5,13 @@ import { Skills } from "./components/skills";
 import { Contact } from "./components/contact";
 import { Projects } from "./components/project";
 import { Header } from "./components/header";
+import styled from "styled-components";
+
+const Version = styled.p`
+  display: flex;
+  justify-content: center;
+  color: gray;
+`;
 
 function App() {
   const [tab, setTab] = useState("tab1");
@@ -38,6 +45,7 @@ function App() {
         </Tabs.Content>
       </Tabs.Root>
       <Contact />
+      <Version>v{__APP_VERSION__}</Version>
     </div>
   );
 }

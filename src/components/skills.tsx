@@ -31,23 +31,21 @@ const SkillsContainer = styled.div`
   width: 100%;
 
   * ul {
-    list-style-position: inside;
-    padding-inline-start: 6px;
+    padding-inline-start: 20px;
   }
 
   @media (max-width: 600px) {
-    flex-direction: column;
+    gap: 20px;
   }
 `;
 
 const Skill = styled.div`
   display: flex;
   flex-direction: column;
-  width: 25%;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
+  background-color: #2f2f2f;
+  padding: 25px 30px;
+  border-radius: 8px;
+  width: 50%;
 
   * li {
     padding-bottom: 4px;

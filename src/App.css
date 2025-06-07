@@ -4,7 +4,7 @@
   padding: 8rem 4rem;
 
   @media (max-width: 800px) {
-    padding: 5rem 3rem;
+    padding: 2rem 1rem;
   }
 }
 

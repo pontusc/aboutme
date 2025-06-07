@@ -45,7 +45,7 @@ function App() {
         </Tabs.Content>
       </Tabs.Root>
       <Contact />
-      <Version>v{__APP_VERSION__}</Version>
+      <Version>{`v${__APP_VERSION__}`}</Version>
     </div>
   );
 }

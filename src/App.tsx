@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import { Skills } from "./components/skills";
 import { Contact } from "./components/contact";
-import { Projects } from "./components/project";
+import { Projects } from "./components/projects";
 import { Header } from "./components/header";
 import styled from "styled-components";
 

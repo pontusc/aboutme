@@ -27,7 +27,7 @@ const projects: Project[] = [
 const ProjectsContainer = styled.div`
   display: flex;
   gap: 40px;
-  width: 90%;
+  width: 100%;
   flex-direction: column;
 
   @media (max-width: 600px) {
@@ -37,7 +37,6 @@ const ProjectsContainer = styled.div`
 const Project = styled.div<{ $isClickable: boolean }>`
   display: flex;
   flex-direction: column;
-  width: 100%;
   transition: all 0.2s ease;
   cursor: ${(props) => (props.$isClickable ? "pointer" : "default")};
   background-color: #2f2f2f;

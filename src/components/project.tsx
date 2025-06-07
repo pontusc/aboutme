@@ -3,69 +3,90 @@ import styled from "styled-components";
 type Project = {
   title: string;
   description: string;
+  tools: string[];
   url?: string;
 };
 
 const projects: Project[] = [
+  {
+    title: "Homelab",
+    description:
+      "A homelab kubernetes deployment running on 3 nodes (virtualized) for me to test new tools and learn about server management, networking and kubernetes GitOps.",
+    tools: ["item1", "item2"],
+    url: "https://github.com/pontusc/homelab",
+  },
+  {
+    title: "Dotnet App",
+    description:
+      "A course project to build and deploy a dotnet app using a React frontend and a Dotnet backend, deployed on a portainer instance.",
+    tools: ["item1", "item2"],
+    url: "https://github.com/pontusc/devops-doe24/tree/main/pipeline-utilities",
+  },
 ];
 
 const ProjectsContainer = styled.div`
   display: flex;
   gap: 40px;
-  width: 100%;
-
-  * ul {
-    list-style-position: inside;
-    padding-inline-start: 6px;
-  }
+  width: 90%;
+  flex-direction: column;
 
   @media (max-width: 600px) {
-    flex-direction: column;
   }
 `;
 
-const Project = styled.div`
+const Project = styled.div<{ $isClickable: boolean }>`
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 100%;
+  transition: all 0.2s ease;
+  cursor: ${(props) => (props.$isClickable ? "pointer" : "default")};
+  background-color: #2f2f2f;
+  padding: 25px 30px;
+  border-radius: 8px;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 
   @media (max-width: 600px) {
-    width: 100%;
   }
+`;
 
-  * li {
-    padding-bottom: 4px;
-  }
+const ToolsParagraph = styled.p`
+  margin-top: 20px;
 `;
 
 export const Projects = () => {
-  const languages = Projects
-    .filter((Project) => skill.type === "language")
-    .sort((a, b) => a.label.localeCompare(b.label));
+  const sortedProjects = projects.sort((a, b) =>
+    a.title.localeCompare(b.title)
+  );
 
-  const tools = Projects
-    .filter((Project) => skill.type === "tool")
-    .sort((a, b) => a.label.localeCompare(b.label));
+  const handleProjectClick = (url?: string) => {
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <ProjectsContainer>
-      <Project>
-        <h3>Languages</h3>
-        <ul>
-          {languages.map((lang) => (
-            <li>{lang.label}</li>
-          ))}
-        </ul>
-      </Project>
-
-      <Project>
-        <h3>Tools</h3>
-        <ul>
-          {tools.map((lang) => (
-            <li>{lang.label}</li>
-          ))}
-        </ul>
-      </Project>
+      {sortedProjects.map((project) => (
+        <Project
+          $isClickable={project.url !== undefined}
+          onClick={() => handleProjectClick(project.url)}
+        >
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+          {project.tools.length > 0 && (
+            <ToolsParagraph>
+              <strong>Tools: </strong>
+              {project.tools.map(
+                (tool, index) =>
+                  `${tool}${index < project.tools.length ? ", " : ""}`
+              )}
+            </ToolsParagraph>
+          )}
+        </Project>
+      ))}
     </ProjectsContainer>
   );
 };

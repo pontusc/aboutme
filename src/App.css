@@ -13,7 +13,7 @@
 }
 
 .header {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .tabButton {
@@ -34,5 +34,5 @@
 }
 
 .TabsContent {
-  padding: 20px 40px;
+  padding-top: 30px;
 }

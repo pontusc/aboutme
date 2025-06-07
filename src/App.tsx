@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import { Skills } from "./components/skills";
 import { Contact } from "./components/contact";
+import { Projects } from "./components/project";
 
 function App() {
   const [tab, setTab] = useState("tab1");
@@ -40,18 +41,13 @@ function App() {
           <Tabs.Trigger
             className={`tabButton ${tab === "tab3" ? "activeTab" : ""}`}
             value="tab3"
-          >
-            {tab === "tab3" ? ">" : ""} Links
-          </Tabs.Trigger>
+          ></Tabs.Trigger>
         </Tabs.List>
         <Tabs.Content className="TabsContent" value="tab1">
           <Skills />
         </Tabs.Content>
         <Tabs.Content className="TabsContent" value="tab2">
-          ynnaf
-        </Tabs.Content>
-        <Tabs.Content className="TabsContent" value="tab3">
-          nosstruc
+          <Projects />
         </Tabs.Content>
       </Tabs.Root>
       <Contact />

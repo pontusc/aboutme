@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 8rem 4rem;
 
-  @media (max-wdith: 800px) {
-      padding: 1rem 2rem;
+  @media (max-width: 800px) {
+    padding: 5rem 3rem;
   }
 }
 
@@ -22,22 +22,24 @@
   transition: transform 0.2s ease;
   font-size: 1.25rem;
   padding-left: 0;
+  border: none;
+  outline: none;
+  min-width: 100px;
 
-  &:hover, :focus-visible {
-    border: none;
-    outline: none;
+  &:hover:not(.activeTab), &:focus-visible:not(.activeTab) {
+    font-weight: bold;
     transform: scale(1.01)
   }
 
-  &:hover, :active {
-    font-weight: bold;
-        transform: scale(1.01)
 
+  &:focus {
+    outline: none;
   }
 }
 
 .tabButton.activeTab {
   font-weight: bold;
+  transform: none;
 }
 
 .TabsContent {

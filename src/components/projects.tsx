@@ -16,9 +16,9 @@ const projects: Project[] = [
     url: "https://github.com/pontusc/homelab",
   },
   {
-    title: "Dotnet App",
+    title: "Fullstack .NET Application CI/CD",
     description:
-      "A course project to build and deploy a dotnet app using a React frontend and a Dotnet backend, deployed on a portainer instance.",
+      "A course project to create a CI/CD workflow using GitLab pipelines. Features containerization & deployment to Portainer.",
     tools: ["GitLab CI", "Docker", "Portainer"],
     url: "https://github.com/pontusc/devops-doe24/tree/main/pipeline-utilities",
   },

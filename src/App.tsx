@@ -4,26 +4,13 @@ import "./App.css";
 import { Skills } from "./components/skills";
 import { Contact } from "./components/contact";
 import { Projects } from "./components/project";
+import { Header } from "./components/header";
 
 function App() {
   const [tab, setTab] = useState("tab1");
   return (
     <div>
-      <div className="header">
-        <h1>Pontus Curtsson</h1>
-        <h3>DevOps Engineer</h3>
-        <p className="description">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-      </div>
+      <Header />
       <Tabs.Root value={tab} onValueChange={(val) => setTab(val)}>
         <Tabs.List>
           <Tabs.Trigger

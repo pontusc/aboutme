@@ -3,6 +3,8 @@ WORKDIR /app
 COPY package*.json .
 RUN npm ci
 COPY . .
+# Set local env variable to pipeline var
+ENV APP_VERSION=$APP_VERSION
 RUN npm run build
 
 FROM nginx:alpine

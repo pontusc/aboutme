@@ -51,7 +51,7 @@ const ProfileImg = styled.img`
 export const Header = () => {
   const isMobile = useIsMobile();
   const description =
-    "I'm a DevOps Engineer who believes the best technology emerges from great teamwork and continuous learning. With a diverse background spanning VR development to Kubernetes orchestration, I bring both technical expertise and a collaborative mindset to every challenge. Currently deepening my knowledge through formal DevOps studies while experimenting with cutting-edge tools in my personal homelab. I'm passionate about creating reliable, scalable solutions and thrive in environments where I can both contribute meaningfully and grow alongside innovative teams.";
+    "I'm a DevOps Engineer who believes the best technology emerges from great teamwork and continuous learning. With a diverse background spanning VR development to Kubernetes orchestration, I bring both technical expertise and a collaborative mindset to every challenge. Currently deepening my knowledge through formal DevOps studies while experimenting with cutting-edge tools in my personal homelab. \n\nI'm passionate about creating reliable, scalable solutions and thrive in environments where I can both contribute meaningfully and grow alongside innovative teams.";
 
   if (isMobile) {
     return (

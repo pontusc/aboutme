@@ -18,6 +18,7 @@ const skills: Skill[] = [
   { label: "Git", type: "tool" },
   { label: "Linux", type: "tool" },
   { label: "Docker", type: "tool" },
+  { label: "Grafana", type: "tool" },
   { label: "GitHub Actions", type: "tool" },
   { label: "GitLab Pipelines", type: "tool" },
   { label: "Kubernetes", type: "tool" },

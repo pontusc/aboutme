@@ -52,7 +52,7 @@ export const Header = () => {
   const isMobile = useIsMobile();
 
   const description =
-    "Hi!\n\nI’m presently studying and learning about DevOps, with a background in software development. Along the way I've realized that my passion lies in infrastructure and operations rather than solely development, hence my switch towards DevOps. I’m motivated, curious and thrive in collaborative environments. I love a challenge and always try to bring a good atmosphere in any group I’m a part of.\n\nI’m presently looking for a LIA position (think internship) for the period 2025-11-10 to 2026-04-26. If you or your company are looking for someone driven to learn, contribute and grow in the DevOps field, don’t hesitate to contact me!";
+    "Hi!\n\nI’m currently studying and learning about DevOps, with a background in software development. Along the way I've realized that my passion lies in infrastructure and operations rather than solely development, hence my switch towards DevOps. I’m motivated, curious and thrive in collaborative environments. I love a challenge and always try to bring a good atmosphere to any group I’m a part of.\n\nI’m presently looking for a LIA position (think internship) for the period 2025-11-10 to 2026-04-26. If you or your company are looking for someone driven to learn, contribute and grow in the DevOps field, don’t hesitate to contact me!";
 
   if (isMobile) {
     return (

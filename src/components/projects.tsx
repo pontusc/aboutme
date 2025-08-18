@@ -11,8 +11,8 @@ const projects: Project[] = [
   {
     title: "Homelab",
     description:
-      "A homelab kubernetes deployment running on 3 nodes (virtualized) for me to test new tools and learn about server management, networking and kubernetes GitOps.",
-    tools: ["Kubernetes", "Helm", "Docker", "GitHub Actions", "ArgoCD", "Incus"],
+      "A homelab kubernetes cluster running on three nodes for me to test new tools and learn about server management, networking and Kubernetes GitOps.",
+    tools: ["K3S", "Helm", "Docker", "GitHub Actions", "ArgoCD", "Traefik", "Longhorn", "Cert-manager", "Cloudflare"],
     url: "https://github.com/pontusc/homelab",
   },
   {

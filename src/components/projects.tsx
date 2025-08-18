@@ -80,7 +80,7 @@ export const Projects = () => {
               <strong>Tools: </strong>
               {project.tools.map(
                 (tool, index) =>
-                  `${tool}${index < project.tools.length ? ", " : ""}`
+                  `${tool}${index < project.tools.length - 1 ? ", " : ""}`
               )}
             </ToolsParagraph>
           )}

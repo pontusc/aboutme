@@ -20,7 +20,6 @@ const skills: Skill[] = [
   { label: "Docker", type: "tool" },
   { label: "Grafana", type: "tool" },
   { label: "Prometheus", type: "tool" },
-  { label: "Loki", type: "tool" },
   { label: "Ansible", type: "tool" },
   { label: "Terraform", type: "tool" },
   { label: "GitHub Actions", type: "tool" },

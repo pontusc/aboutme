@@ -36,31 +36,31 @@ jobs:
           build-args: |
             APP_VERSION=1.0.${{github.run_number}}
 
-deploy:
-  needs: build
-  runs-on: ubuntu-latest
-  environment: default
-  env:
-    DOCKER_TAG: ${{needs.build.outputs.DOCKER_TAG}}
-  steps:
-    - name: Checks out repository
-      uses: actions/checkout@v4
-      with:
-        persist-credentials: false
-        fetch-depth: 0
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: default
+    env:
+      DOCKER_TAG: ${{needs.build.outputs.DOCKER_TAG}}
+    steps:
+      - name: Checks out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
 
-    - name: Update k8s manifest
-      run: |
-        cd manifests
-        sed -i "s|pontusc/aboutme:.*$|$DOCKER_TAG|" aboutme.yml
+      - name: Update k8s manifest
+        run: |
+          cd manifests
+          sed -i "s|pontusc/aboutme:.*$|$DOCKER_TAG|" aboutme.yml
 
-    - name: Commit
-      run: |
-        git config --local user.name 'github-actions[bot]'
-        git config --local user.email 'github-actions[bot]@users.noreply.github.com'
-        git commit -a -m "BOT: ${{github.event.head_commit.message}}"
+      - name: Commit
+        run: |
+          git config --local user.name 'github-actions[bot]'
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit -a -m "BOT: ${{github.event.head_commit.message}}"
 
-    - name: Push
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}

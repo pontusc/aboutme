@@ -2,6 +2,7 @@ name: Build & Deploy
 "on":
   push:
     branches: ["main"]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -43,16 +44,16 @@ jobs:
     env:
       DOCKER_TAG: ${{needs.build.outputs.DOCKER_TAG}}
     steps:
-      - name: Checks out repository
+      - name: Checkout deployments repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
-          fetch-depth: 0
+          repository: pontusc/deployments
+          token: ${{secrets.PAT_TOKEN}}
 
-      - name: Update k8s manifest
+      - name: Update manifest
         run: |
-          # cd manifests
-          # sed -i "s|pontusc/aboutme:.*$|$DOCKER_TAG|" aboutme.yml
+          cd aboutme
+          sed -i "s|pontusc/aboutme:.*$|$DOCKER_TAG|" aboutme.yml
 
       - name: Commit
         run: |
@@ -63,4 +64,5 @@ jobs:
       - name: Push
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{secrets.PAT_TOKEN}}
+          repository: pontusc/homelab
